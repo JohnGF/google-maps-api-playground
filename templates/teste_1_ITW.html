@@ -1,0 +1,67 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://code.jquery.com/jquery-
+1.12.4.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="x">word</div>
+</div>
+<input type="text" value="Campo do Texto">
+<button onclick="alert('clicou no botao')">Botão</button>
+<iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  referrerpolicy="no-referrer-when-downgrade"
+  
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHQUnv5VzxQpzCHrFGvKDLPgkkGHp_0_0
+  &q=Space+Needle,Seattle+WA">
+
+
+</iframe>
+
+<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+ src="https://www.google.com/maps/embed/v1/directions?origin=Jersey+City,New+York+NY&destination=place_id:ChIJqXwSpAFZwokR28_WgZDMzb4&key=AIzaSyBHQUnv5VzxQpzCHrFGvKDLPgkkGHp_0_0"></iframe> 
+</body>
+
+</html>
+<style>
+#container {
+width: 300px;
+margin: 10px auto;
+}
+#x {
+height: 100px;
+border: solid 2px darkred;
+}
+.light {
+color: white;
+}
+input{
+    color:grey
+}
+</style>
+<script>
+$("input").click(()=>{alert('clicou no Campo do Texto')})
+$(document).ready(function() {
+$("#x").toggleClass("light");
+$("#x").mousemove(function(event) {
+if (event.pageX <= $(document).width()/2) {
+$("#x").css('color', 'blue').text('blue');
+}
+else {
+$("#x").css('color', 'green').text('green');
+}
+});
+document.onmousemove = function(e) { 
+    var x = e.clientX; 
+    var y = e.clientY; 
+    document.getElementById('container').style.display=fixed
+    document.getElementById('x').style.marginTop  = y+"px";
+    
+}
+})
+</script>
